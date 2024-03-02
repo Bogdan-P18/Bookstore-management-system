@@ -1,0 +1,19 @@
+.grid-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 100vw;
+    height: 100vw;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+}
+
+.grid-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #dee1e3;
+    height: 150px;
+    width: 150px;
+    border-radius: 3px;
+}
