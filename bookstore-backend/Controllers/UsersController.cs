@@ -52,16 +52,14 @@ namespace bookstore_backend.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Password")] User user)
+        public async Task<ActionResult<User>> Create([FromBody] User user)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(user);
+                _context.Users.Add(user);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
             }
-            return View(user);
+            return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
 
         // GET: Users/Edit/5

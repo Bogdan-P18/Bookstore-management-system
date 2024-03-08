@@ -1,0 +1,10 @@
+.grid-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 100vw;
+    height: 100vw;
+    display: grid;
+    grid-template-columns: 2;
+    grid-gap: 10px;
+}

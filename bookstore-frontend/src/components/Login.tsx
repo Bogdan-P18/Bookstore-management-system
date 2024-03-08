@@ -1,12 +1,24 @@
 import axios from "axios";
-import { useState } from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { baseUrl } from "./core";
 import "./Login.css"
 
+export interface AuthState {
+    username?: string,
+    password?: string
+}
+
+const initialState: AuthState = {
+    username: '',
+    password: ''
+}
+
+export const AuthContext = React.createContext<AuthState>(initialState);
+
 export const Login = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [state, setState] = useState<AuthState>({});
+    const { username, password } = state;
     const nav = useNavigate();
 
     const handleLogin = async () => {
@@ -35,16 +47,16 @@ export const Login = () => {
             <div className="header"> Sign up </div>
             <form className="inputs">
                 <div className="input-around">
-                    <input className="input" type="text" placeholder="Username" autoComplete="off" onChange={(e) => setUsername(e.target.value)} />
+                    <input className="input" type="text" placeholder="Username" autoComplete="off" onChange={(e) => setState({...state, username: e.target.value})} />
                 </div>
 
                 <div className="input-around">
-                    <input className="input" type="password" placeholder="Password" autoComplete="off" onChange={(e) => setPassword(e.target.value)} />
+                    <input className="input" type="password" placeholder="Password" autoComplete="off" onChange={(e) => setState({...state, password: e.target.value})} />
                 </div>
 
                 <button className="button" type="button" onClick={handleLogin}> Sign in </button>
 
-                <a className="text" href="#"> Don't have an account? Register here! </a>
+                <a className="text" onClick={() => {nav('/register')}}> Don't have an account? Register here! </a>
             </form>
         </section>
     );

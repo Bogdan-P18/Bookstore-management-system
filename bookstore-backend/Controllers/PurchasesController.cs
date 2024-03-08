@@ -19,9 +19,9 @@ namespace bookstore_backend.Controllers
         }
 
         // GET: Purchases
-        public async Task<IActionResult> Index()
+        public async Task<ActionResult<IEnumerable<Purchase>>> Index()
         {
-            return View(await _context.Purchases.ToListAsync());
+            return await _context.Purchases.ToListAsync();
         }
 
         // GET: Purchases/Details/5
@@ -53,15 +53,14 @@ namespace bookstore_backend.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UserId,BookId,PurchaseDate")] Purchase purchase)
+        public async Task<ActionResult<Purchase>> Create([FromBody] Purchase purchase)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(purchase);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
             }
-            return View(purchase);
+            return CreatedAtAction("GetPurchase", new { id = purchase.Id }, purchase);
         }
 
         // GET: Purchases/Edit/5

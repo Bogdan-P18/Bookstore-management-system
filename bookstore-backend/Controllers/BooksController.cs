@@ -27,7 +27,7 @@ namespace bookstore_backend.Controllers
             return await _context.Books.ToListAsync();
         }
 
-        // GET: api/Books/5
+        // GET: api/Books/id
         [HttpGet("{id}")]
         public async Task<ActionResult<Book>> GetBook(int id)
         {
@@ -41,7 +41,7 @@ namespace bookstore_backend.Controllers
             return book;
         }
 
-        // PUT: api/Books/5
+        // PUT: api/Books/id
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBook(int id, Book book)
