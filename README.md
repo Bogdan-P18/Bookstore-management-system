@@ -24,11 +24,13 @@ A simple bookstore management system using asp.net core and react. It offers aut
     Go to the bookstore-frontend folder and run 'npm install'
 
 ### 3. Setting up the database
-    In the appsettings.json, go to the ConnectionStrings and change the Server to localhost, and the you'll have to add the migrations.
+    In the appsettings.json, go to the ConnectionStrings and change the Server to localhost,
+     and the you'll have to add the migrations.
     To do that, follow this steps:
 - Go to NuGet Package Manager and select Package Manager Console
 - After the console appears, run Add-Migration "Message" and Update-Database
 
 ### 4. Using the app
-    For the backend, just run the Program.cs. A window should appear in the browser which you can just close. Then go to the bookstore-frontend and run "npm run dev"
+    For the backend, just run the Program.cs. A window should appear in the browser which
+     you can just close. Then go to the bookstore-frontend and run "npm run dev"
     
