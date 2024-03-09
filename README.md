@@ -7,7 +7,7 @@ A simple bookstore management system using asp.net core and react. It offers aut
 - You can see a list of books available in the store
 
 # Frameworks/dependencies
-- [ASP.NET Core] (https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-8.0)
+- [ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-8.0)
 
 # Getting started
 ## You'll need:
@@ -17,9 +17,9 @@ A simple bookstore management system using asp.net core and react. It offers aut
 - NuGet package manager
 
 # 1. Clone the repository
-git clone https://github.com/BogdanP-18/Bookstore-management-system.git
+    git clone https://github.com/BogdanP-18/Bookstore-management-system.git
     
 # 2. Install npm dependencies
-Go to the bookstore-frontend folder and run 'npm install'
+    Go to the bookstore-frontend folder and run 'npm install'
 
 # 3. 
